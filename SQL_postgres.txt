@@ -158,3 +158,37 @@ FROM
     productlines t2 ON t1.productline = t2.productline;
 
 ------------------------------------------------------------------
+
+HAVING
+
+http://www.mysqltutorial.org/mysql-having.aspx
+The HAVING clause is often used with the GROUP BY clause to filter groups based on a specified condition. If the GROUP BY clause is omitted, the HAVING clause behaves like the WHERE clause.
+
+ex:
+SELECT
+    ordernumber,
+    SUM(quantityOrdered) AS itemsCount,
+    SUM(priceeach*quantityOrdered) AS total
+FROM
+    orderdetails
+GROUP BY ordernumber
+HAVING total > 1000 AND itemsCount > 600;
+
+------------------------------------------------------------------
+
+GROUP BY
+
+http://www.mysqltutorial.org/mysql-group-by.aspx
+The GROUP BY clause groups a set of rows into a set of summary rows by values of columns or expressions. The GROUP BY clause returns one row for each group. In other words, it reduces the number of rows in the result set.
+You often use the GROUP BY clause with aggregate functions such as SUM, AVG, MAX, MIN, and COUNT. The aggregate function that appears in the SELECT clause provides the information about each group.
+Without aggregate, GROUP BY work like distinct.
+
+ex:
+SELECT
+    orderNumber,
+    SUM(quantityOrdered * priceEach) AS total
+FROM
+    orderdetails
+GROUP BY orderNumber;
+
+------------------------------------------------------------------
