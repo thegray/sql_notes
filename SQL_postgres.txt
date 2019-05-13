@@ -192,3 +192,23 @@ FROM
 GROUP BY orderNumber;
 
 ------------------------------------------------------------------
+
+LIKE
+
+search for specified pattern in field, used in WHERE
+Wildcard list:
+% : The percent sign represents zero, one, or multiple characters 
+
+_ : The underscore represents a single character 
+ex:
+SELECT * FROM Customers
+WHERE ContactName LIKE 'a%o';
+
+------------------------------------------------------------------
+
+AGGREGATE
+
+COUNT(), AVG() and SUM(), MIN(), MAX() Functions
+
+------------------------------------------------------------------
+
