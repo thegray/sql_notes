@@ -36,3 +36,59 @@ select name || ‘ ‘ || from sometable;
 
 ------------------------------------------------------------------
 
+CASE
+
+If-else conditional
+
+Usage in select, ex:
+select m.firstname || ' ' || m.surname as member, f.name,
+case
+when m.memid=0 then
+f.guestcost
+else
+f.membercost
+end as cost
+from members as m
+… ;
+------------------------------------------------------------------
+
+SUB QUERY
+
+Query inside query
+
+Usage in select, ex:
+select distinct mems.firstname || ' ' ||  mems.surname as member,
+        (select recs.firstname || ' ' || recs.surname as recommender 
+                from cd.members recs 
+                where recs.memid = mems.recommendedby
+        )
+        from 
+                cd.members mems
+order by member;
+
+
+select name from (
+        select m.firstname as name
+                from member m
+                where m.id > 0
+) as listmember
+where … ;
+
+------------------------------------------------------------------
+
+IN OPERATOR
+
+Select condition of multiple values, shorthand of multiple OR condition
+
+Usage ex:
+select * from listmember
+where id in (1,3,5,7,9);
+
+
+select * from listmember as lm
+where lm.id in (
+select lu.id from listuser
+);
+
+------------------------------------------------------------------
+
