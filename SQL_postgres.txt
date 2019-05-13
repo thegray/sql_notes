@@ -212,3 +212,33 @@ COUNT(), AVG() and SUM(), MIN(), MAX() Functions
 
 ------------------------------------------------------------------
 
+INSERT INTO
+
+statement used to insert new records in a table
+
+ex:
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+------------------------------------------------------------------
+
+UPDATE
+
+statement used to modify the existing records in a table
+
+ex:
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+
+------------------------------------------------------------------
+
+DELETE
+
+statement used to delete existing records in a table
+
+ex:
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
+------------------------------------------------------------------
+
