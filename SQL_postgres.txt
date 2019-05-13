@@ -1,0 +1,38 @@
+﻿LINUX - HOW TO USE POSTGRES
+Reference: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
+* Select user postgres
+sudo -i -u postgres
+* Open psql
+* Do the database operation in psql
+* List command: 
+   * \? list all the commands
+   * \l list databases
+   * \conninfo display information about current connection
+   * \c [DBNAME] connect to new database, e.g., \c template1
+   * \dt list tables
+   * Then you can run SQL statements, e.g., SELECT * FROM my_table;(Note: a statement must be terminated with semicolon ;)
+   * \dS [TABLENAME] to see schema of the table
+   * \q quit psql
+------------------------------------------------------------------
+
+SQL COMMAND ORDER
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+
+------------------------------------------------------------------
+
+CONCAT STRING
+
+Concate string in result
+Use || 
+
+- ex:
+select name || ‘ ‘ || from sometable;
+
+------------------------------------------------------------------
+
